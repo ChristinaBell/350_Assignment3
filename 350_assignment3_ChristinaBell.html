@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head> <title>XYZ Website</title> </head>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<link rel="stylesheet" type = "text/css" href="350_assignment3_ChristinaBell.css">
+<script type="text/javascript" src="js/350_assignment3_ChristinaBell.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script>
+$(function(){
+  $(".pickdate").datepicker({ dateFormat:"dd-mm-yy", defaultDate: new Date() } );
+  $(".pickdate").val(new Date() );
+});
+
+</script>
+
+
+<body>
+
+  <!-- ---------------------------HEADING / NAVBAR --------------------------------- -->
+  <div id="heading_div">
+
+    <div id="company_heading_div"></div>
+
+    <div id="nav_bar_div">
+      <nav class="navbar navbar">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="nav_item active"><a data-toggle="pill" class="nav_item" href="#home_page_div">Home</a></li>
+
+            <li class="dropdown nav_item">
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Security
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown_item" role="menu">
+                <li><a class="dropdown_item" href="#camera_div" data-toggle="pill" >Cameras</a></li>
+                <li><a href="#motion_div" data-toggle="pill" >Motion</a></li>
+                <li><a href="#" data-toggle="pill">Locking</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown nav_item">
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Energy
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown_item" role="menu">
+                <li><a class="dropdown_item" href="#" data-toggle="pill" >Usage</a></li>
+                <li><a href="#" data-toggle="pill" >Lights</a></li>
+                <li><a href="#" data-toggle="pill">Heating</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown nav_item">
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Child
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown_item" role="menu">
+                <li><a class="dropdown_item" href="#" data-toggle="pill" >Add Child</a></li>
+              </ul>
+            </li>
+
+            <!-- <li class="nav_item"><a data-toggle='pill' class="nav_item" href="#">Child</a></li> -->
+
+            <li class="dropdown nav_item">
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Account
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown_item" role="menu">
+                <li><a class="dropdown_item" href="#" data-toggle="pill" >Account Details</a></li>
+                <li><a href="#" data-toggle="pill" >Logout</a></li>
+                <li><a href="#" data-toggle="pill" >Logout</a></li>
+
+              </ul>
+            </li>
+
+            <!-- <li class="nav_item"><a data-toggle='pill' class="nav_item" href="#"> Account</a></li> -->
+
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+
+  <div class="page_content_wrapper_div tab-content">
+
+    <!-- --------------------------- HOME page --------------------------------------- -->
+
+    <div id="home_page_div" class="page_content_div tab-pane fade in active">
+      <div class="page_header"> Home  </div>
+
+      <div id="camera_carousel_container" class="homepage-div">
+        <div class="home_page_div_heading"> SECURITY </div>
+        <div id="camera_carousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#camera_carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#camera_carousel" data-slide-to="1"></li>
+            <li data-target="#camera_carousel" data-slide-to="2"></li>
+            <li data-target="#camera_carousel" data-slide-to="3"></li>
+          </ol>
+
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="entrance.jpeg" alt="Entrance">
+              <div class="carousel-caption">
+                Entrance
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="diningroom.jpg" alt="Dining Room">
+              <div class="carousel-caption">
+                Dining Room
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="kitchen.jpg" alt="Kitchen">
+              <div class="carousel-caption">
+                Kitchen
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="tvroom.jpg" alt="TV Room">
+              <div class="carousel-caption">
+                TV Room
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#camera_carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#camera_carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div id="locks_div_homepage" class="homepage-div">
+        <div class="home_page_div_heading"> LOCKS </div>
+        <div id="front_door_lock" class="lock_homepage">
+          <input type="checkbox" name=front_door_checkbox checked data-toggle="toggle">
+        </div>
+        <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
+        <div id="all_door_lock" class="lock_homepage">
+          <input type="checkbox" name="all_door_checkbox" checked data-toggle="toggle">
+        </div>
+        <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
+      </div>
+
+      <div id="energy_div_homepage" class="homepage-div">
+        <div class="home_page_div_heading"> ENERGY </div>
+        <div id="usage_graph"> </div>
+      </div>
+
+      <div id="lights_div_homepage" class="homepage-div">
+        <div class="home_page_div_heading"> LIGHTS AND HEATING </div>
+        <div id="front_door_lock" class="lock_homepage">
+          <input type="checkbox" name=front_door_checkbox checked data-toggle="toggle">
+        </div>
+        <div id="front_door_label" class="label_lock_homepage"> Heating </div>
+        <div id="all_door_lock" class="lock_homepage">
+          <input type="checkbox" name="all_door_checkbox" checked data-toggle="toggle">
+        </div>
+        <div id="all_door_label" class="label_lock_homepage"> All Lights </div>
+      </div>
+
+    </div>
+
+    <!-- --------------------------- SECURITY > CAMERA page --------------------------- -->
+
+    <div id="camera_div" class="page_content_div tab-pane fade">
+      <div class="page_header"> Security > Cameras </div>
+
+      <div id="camera_container">
+
+        <button type="button" id="camera1" class="camera_footage"> Entrance </button>
+
+        <button type="button" id="camera2" class="btn btn-info btn-lg camera_footage" data-toggle="modal" data-target="#video_footage_dialog"> Kitchen </button>
+
+        <button type="button" id="camera3" class="camera_footage"> Dining Room </button>
+
+        <button type="button" id="camera4" class="camera_footage"> TV Room</button>
+
+        <button type="button" id="camera5" class="camera_footage"> Lounge </button>
+
+        <button type="button" id="camera6" class="camera_footage"> Bedroom 1 </button>
+
+        <button type="button" id="camera7" class="camera_footage"> Bedroom 2 </button>
+
+        <button type="button" id="camera8" class="camera_footage"> Bedroom 3 </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="video_footage_dialog" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- close button at top -->
+                <button type="button" id="x" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Kitchen Video Footage </h4>
+              </div>
+              <div class="video_footage_modal_body">
+
+              </div>
+              <div id="progress_bar">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <!-- --------------------------- SECURITY > MOTIOn page ---------------------------- -->
+
+    <div id="motion_div" class="page_content_div tab-pane fade">
+      <div class="page_header"> Security > Motion Sensors </div>
+
+      <div id="motion_header"> Motion Detection Log  </div>
+      <div id="filter_motion" >
+
+        <button type="button" class="btn btn-primary" id="go"> Go </button>
+
+        <div id="end_date_div" class="datepicker_div" title="Select start date">
+          <p> To: <input type="text" class="pickdate"> </p>
+        </div>
+
+        <div id="start_date_div"  class="datepicker_div" title="Select start date">
+          <p> From: <input type="text" class="pickdate"> </p>
+        </div>
+
+        <div id="select_div">
+          Filter Rooms:
+          <select id="motion_select">
+            <option value="all">All</option>
+            <option value="entrance">Entrance</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="lounge">Lounge</option>
+            <option value="tvroom">TV Room</option>
+            <option value="bedroom1">Bedroom 1</option>
+            <option value="beroom2">Bedroom 2</option>
+            <option value="beroom3">Bedroom 3</option>
+          </select>
+        </div>
+
+
+      </div>
+
+      <div id="table_container" class="container">
+        <!-- <div id="table_header"> Motion Detected </div>  -->
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Room</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- --------------------------- SECURITY > LOCKS page ----------------------------- -->
+
+  </div>
+
+</body>
+</html>
