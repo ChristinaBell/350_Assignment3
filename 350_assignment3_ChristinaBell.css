@@ -266,7 +266,7 @@ ul.dropdown-menu>li.active>a{
 
 #go {
   width: 3%;
-  margin: 0px;
+  margin-left: 20px;
   float: right;
   display: grid;
   background-color: #F37029;
@@ -274,23 +274,26 @@ ul.dropdown-menu>li.active>a{
 }
 
 .datepicker_div{
-  width: 16%;
+  width: 12%;
   margin: 0px;
   float: right;
   display: grid;
-  margin-left: 20px;
+  margin-left: 0px;
+  text-align: right;
 }
 
 .pickdate{
-  width: 50%;
+  width: 70%;
   float: right;
 }
 
 #select_div{
-  width: 10%;
+  width: 15%;
   margin: 0px;
   float: right;
   display: grid;
+  margin-right: 20px;
+  text-align: right;
 }
 
 #motion_select{
@@ -310,7 +313,7 @@ ul.dropdown-menu>li.active>a{
 
 #table_container{
   margin-top: 20px;
-  height: 80%;
+  height: 75%;
   width: 100%;
   overflow: auto;
   font-family: nexa;
@@ -362,4 +365,45 @@ ul.dropdown-menu>li.active>a{
 .dropdown_item{
   font-family: nexa;
   font-size: 18px;
+}
+
+#floorplan_container{
+  height: 90%;
+  width: 100%;
+  background: url("floorplan3.jpg") no-repeat center;
+  background-size: contain;
+}
+
+.doorlock_div{
+  display: block;
+  height: 72px;
+  width: 100%;
+}
+
+#frontdoor_lock{
+  height: 70px;
+  width: 70px;
+  margin-left: 45%;
+  background: url("Padlock locked final .png") no-repeat center;
+  background-size: contain;
+}
+
+.padlock{
+  height: 70px;
+  width: 70px;
+  background: url("Padlock locked final .png") no-repeat center;
+  background-size: contain;
+
+}
+
+#garage_lock{
+  margin-left: 25%;
+}
+
+#deck_lock{
+  margin-left: 86%;
+}
+
+#backgarage_lock{
+  margin-left: 25%;
 }

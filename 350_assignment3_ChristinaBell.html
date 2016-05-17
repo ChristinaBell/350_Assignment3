@@ -46,7 +46,7 @@ $(function(){
               <ul class="dropdown-menu dropdown_item" role="menu">
                 <li><a class="dropdown_item" href="#camera_div" data-toggle="pill" >Cameras</a></li>
                 <li><a href="#motion_div" data-toggle="pill" >Motion</a></li>
-                <li><a href="#" data-toggle="pill">Locking</a></li>
+                <li><a href="#locks_div" data-toggle="pill">Locking</a></li>
               </ul>
             </li>
 
@@ -238,15 +238,15 @@ $(function(){
         <button type="button" class="btn btn-primary" id="go"> Go </button>
 
         <div id="end_date_div" class="datepicker_div" title="Select start date">
-          <p> To: <input type="text" class="pickdate"> </p>
+          <p> To: &nbsp <input type="text" class="pickdate"> </p>
         </div>
 
         <div id="start_date_div"  class="datepicker_div" title="Select start date">
-          <p> From: <input type="text" class="pickdate"> </p>
+          <p> From: &nbsp <input type="text" class="pickdate"> </p>
         </div>
 
         <div id="select_div">
-          Filter Rooms:
+          Filter Rooms: &nbsp
           <select id="motion_select">
             <option value="all">All</option>
             <option value="entrance">Entrance</option>
@@ -385,6 +385,49 @@ $(function(){
     </div>
 
     <!-- --------------------------- SECURITY > LOCKS page ----------------------------- -->
+
+    <div id="locks_div" class="page_content_div tab-pane fade">
+        <div class="page_header"> Security > Locking  </div>
+        <div id="floorplan_container">
+
+          <div class="doorlock_div"> </div>
+
+          <div class="doorlock_div" id="sidedoor1_lock">
+            <button id="frontdoor_lock" class="padlock">
+            </button>
+          </div>
+
+          <div class="doorlock_div" id="sidedoor2_lock">
+            <button id="garage_lock" class="padlock">
+            </button>
+          </div>
+
+          <div class="doorlock_div" id="topdoor_lock">
+
+          </div>
+
+          <div class="doorlock_div" id="garagedoor_lock">
+            <button id="deck_lock" class="padlock">
+            </button>
+          </div>
+
+          <div class="doorlock_div" id="garagedoor_lock"> </div>
+
+          <div class="doorlock_div"> </div>
+
+          <div class="doorlock_div"> </div>
+
+          <div class="doorlock_div" id="garagedoor_lock">
+            <button id="backgarage_lock" class="padlock">
+            </button>
+           </div>
+
+
+        </div>
+
+
+    </div>
+
 
   </div>
 
