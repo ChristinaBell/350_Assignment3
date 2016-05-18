@@ -18,10 +18,25 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <script>
+// $('.doorlock_div').click(function() {
+//   // $("this").toggleClass("unlocked");
+//   console.log("clicked");
+//   alert("clicked!");
+// });
+
+$(function(){
+  $('.locked').on('click', function() {
+     $(this).toggleClass("unlocked");
+  });
+
+});
+
+
 $(function(){
   $(".pickdate").datepicker({ dateFormat:"dd-mm-yy", defaultDate: new Date() } );
-  $(".pickdate").val(new Date() );
+  $(".pickdate").datepicker('setDate', new Date());
 });
+
 
 </script>
 
@@ -76,7 +91,7 @@ $(function(){
               <ul class="dropdown-menu dropdown_item" role="menu">
                 <li><a class="dropdown_item" href="#" data-toggle="pill" >Account Details</a></li>
                 <li><a href="#" data-toggle="pill" >Logout</a></li>
-                <li><a href="#" data-toggle="pill" >Logout</a></li>
+                <!-- <li><a href="#" data-toggle="pill" >Logout</a></li> -->
 
               </ul>
             </li>
@@ -96,10 +111,10 @@ $(function(){
     <!-- --------------------------- HOME page --------------------------------------- -->
 
     <div id="home_page_div" class="page_content_div tab-pane fade in active">
-      <div class="page_header"> Home  </div>
+      <div class="page_header">   </div>
 
       <div id="camera_carousel_container" class="homepage-div">
-        <div class="home_page_div_heading"> SECURITY </div>
+        <div class="home_page_div_heading">  </div>
         <div id="camera_carousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -154,22 +169,25 @@ $(function(){
 
       <div id="locks_div_homepage" class="homepage-div">
         <div class="home_page_div_heading"> LOCKS </div>
+
         <div id="front_door_lock" class="lock_homepage">
-          <input type="checkbox" name=front_door_checkbox checked data-toggle="toggle">
+          <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
+          <button  id="front_door_lock_button" class="padlock locked unlocked"></button>
         </div>
-        <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
+
         <div id="all_door_lock" class="lock_homepage">
-          <input type="checkbox" name="all_door_checkbox" checked data-toggle="toggle">
+          <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
+          <button  id="garage_lock_button" class="padlock locked"></button>
         </div>
-        <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
+
       </div>
 
-      <div id="energy_div_homepage" class="homepage-div">
+      <!-- <div id="energy_div_homepage" class="homepage-div">
         <div class="home_page_div_heading"> ENERGY </div>
         <div id="usage_graph"> </div>
-      </div>
+      </div> -->
 
-      <div id="lights_div_homepage" class="homepage-div">
+      <!-- <div id="lights_div_homepage" class="homepage-div">
         <div class="home_page_div_heading"> LIGHTS AND HEATING </div>
         <div id="front_door_lock" class="lock_homepage">
           <input type="checkbox" name=front_door_checkbox checked data-toggle="toggle">
@@ -179,7 +197,7 @@ $(function(){
           <input type="checkbox" name="all_door_checkbox" checked data-toggle="toggle">
         </div>
         <div id="all_door_label" class="label_lock_homepage"> All Lights </div>
-      </div>
+      </div> -->
 
     </div>
 
@@ -227,40 +245,43 @@ $(function(){
       </div>
       </div>
 
-    <!-- --------------------------- SECURITY > MOTIOn page ---------------------------- -->
+    <!-- --------------------------- SECURITY > MOTION page ---------------------------- -->
 
     <div id="motion_div" class="page_content_div tab-pane fade">
       <div class="page_header"> Security > Motion Sensors </div>
 
       <div id="motion_header"> Motion Detection Log  </div>
-      <div id="filter_motion" >
+        <div id="filter_motion" >
+          <button class="btn btn-primary" id="filter_collapse_button" data-toggle="collapse" data-target="#collapse_div">Filter Motion
 
-        <button type="button" class="btn btn-primary" id="go"> Go </button>
-
-        <div id="end_date_div" class="datepicker_div" title="Select start date">
-          <p> To: &nbsp <input type="text" class="pickdate"> </p>
+          </button>
         </div>
 
-        <div id="start_date_div"  class="datepicker_div" title="Select start date">
-          <p> From: &nbsp <input type="text" class="pickdate"> </p>
+        <div id="collapse_div" class="collapse">
+          <button type="button" class="btn btn-primary" id="go"> Go </button>
+
+          <div id="end_date_div" class="datepicker_div" title="Select start date">
+            <p> To: &nbsp <input type="text" class="pickdate"> </p>
+          </div>
+
+          <div id="start_date_div"  class="datepicker_div" title="Select start date">
+            <p> From: &nbsp <input type="text" class="pickdate"> </p>
+          </div>
+
+          <div id="select_div">
+            Filter Rooms: &nbsp
+            <select id="motion_select">
+              <option value="all">All</option>
+              <option value="entrance">Entrance</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="lounge">Lounge</option>
+              <option value="tvroom">TV Room</option>
+              <option value="bedroom1">Bedroom 1</option>
+              <option value="beroom2">Bedroom 2</option>
+              <option value="beroom3">Bedroom 3</option>
+            </select>
+          </div>
         </div>
-
-        <div id="select_div">
-          Filter Rooms: &nbsp
-          <select id="motion_select">
-            <option value="all">All</option>
-            <option value="entrance">Entrance</option>
-            <option value="kitchen">Kitchen</option>
-            <option value="lounge">Lounge</option>
-            <option value="tvroom">TV Room</option>
-            <option value="bedroom1">Bedroom 1</option>
-            <option value="beroom2">Bedroom 2</option>
-            <option value="beroom3">Bedroom 3</option>
-          </select>
-        </div>
-
-
-      </div>
 
       <div id="table_container" class="container">
         <!-- <div id="table_header"> Motion Detected </div>  -->
@@ -390,15 +411,16 @@ $(function(){
         <div class="page_header"> Security > Locking  </div>
         <div id="floorplan_container">
 
+          <div id="lock_padding"> </div>
           <div class="doorlock_div"> </div>
 
           <div class="doorlock_div" id="sidedoor1_lock">
-            <button id="frontdoor_lock" class="padlock">
+            <button id="frontdoor_lock" class="locked">
             </button>
           </div>
 
           <div class="doorlock_div" id="sidedoor2_lock">
-            <button id="garage_lock" class="padlock">
+            <button  id="garage_lock" class="padlock locked">
             </button>
           </div>
 
@@ -407,7 +429,7 @@ $(function(){
           </div>
 
           <div class="doorlock_div" id="garagedoor_lock">
-            <button id="deck_lock" class="padlock">
+            <button id="deck_lock" class="padlock locked">
             </button>
           </div>
 
@@ -418,10 +440,9 @@ $(function(){
           <div class="doorlock_div"> </div>
 
           <div class="doorlock_div" id="garagedoor_lock">
-            <button id="backgarage_lock" class="padlock">
+            <button id="backgarage_lock" class="padlock locked">
             </button>
            </div>
-
 
         </div>
 

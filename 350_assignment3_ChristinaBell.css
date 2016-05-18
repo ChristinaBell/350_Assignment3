@@ -76,7 +76,7 @@ ul.dropdown-menu>li.active>a{
   text-align: center;
   display: inline-block;
   width: calc(50% - 2px);
-  height: 46%;
+  height: 76%;
   margin-bottom: 3px;
   border: 1px dotted black;
 }
@@ -102,10 +102,46 @@ ul.dropdown-menu>li.active>a{
 }
 
 .lock_homepage{
-   margin-top: 50px;
-   margin-bottom: 20px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+   width: 100%;
+   height: 10%;
    display: inline-block;
  }
+
+.label_lock_homepage{
+   width: 50%;
+   height: 50%;
+   /*margin-top: 10%;*/
+   float: left;
+   font-size: 18px;
+ }
+
+#front_door_lock_button{
+   width: 50%;
+   height: 100%;
+   float: right;
+ }
+
+#garage_lock_button{
+   width: 50%;
+   height: 100%;
+   float: right;
+ }
+
+
+/*.label_lock_homepage{
+  display: inline-block;
+  width: 50%;
+  height: 15%;
+}
+
+.lock_homepage{
+  display: inline-block;
+  width: 40%;
+  height: 15%;
+}*/
+
 
 #camera_carousel_containter{
   float: left;
@@ -113,14 +149,6 @@ ul.dropdown-menu>li.active>a{
 
 #energy_div_homepage{
   float: left;
-}
-
-#usage_graph{
-  height: 93%;
-  width: 100%;
-  text-align: center;
-  background: url("usage.jpg") no-repeat;
-  background-size: cover;
 }
 
 #lights_div_homepage{
@@ -313,8 +341,9 @@ ul.dropdown-menu>li.active>a{
 
 #table_container{
   margin-top: 20px;
-  height: 75%;
+  height: 74%;
   width: 100%;
+  padding-left: 0px;
   overflow: auto;
   font-family: nexa;
   font-weight: normal;
@@ -329,7 +358,7 @@ ul.dropdown-menu>li.active>a{
   font-family: nexa;
   font-weight: normal;
   font-size: 16px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .dropdown:hover .dropdown-menu {
@@ -374,26 +403,46 @@ ul.dropdown-menu>li.active>a{
   background-size: contain;
 }
 
+#lock_padding{
+  width: 100%;
+  height: 15px;
+}
+
 .doorlock_div{
   display: block;
-  height: 72px;
+  height: 73px;
   width: 100%;
+  /*border: 2px red solid;*/
 }
 
 #frontdoor_lock{
   height: 70px;
   width: 70px;
   margin-left: 45%;
-  background: url("Padlock locked final .png") no-repeat center;
-  background-size: contain;
+  /*background: url("Padlock locked final .png") no-repeat center;
+  background-size: contain;*/
 }
 
 .padlock{
   height: 70px;
   width: 70px;
+}
+
+.locked{
   background: url("Padlock locked final .png") no-repeat center;
   background-size: contain;
+  padding: 0;
+  border: none;
+}
 
+.unlocked{
+  background: url("Padlock unlocked final .png") no-repeat center;
+  background-size: contain;
+  padding: 0;
+  border: none;
+}
+button:focus, input[type="button"]:focus {
+    outline: none;
 }
 
 #garage_lock{
@@ -406,4 +455,17 @@ ul.dropdown-menu>li.active>a{
 
 #backgarage_lock{
   margin-left: 25%;
+}
+
+#filter_collapse_button {
+  float: right;
+  background-color: #F37029;
+  border: none;
+}
+
+#collapse_div{
+  width: 100%;
+  height: 5%;
+  font-family: nexa;
+  font-weight: normal;
 }
