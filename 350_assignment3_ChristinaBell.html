@@ -18,16 +18,31 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <script>
-// $('.doorlock_div').click(function() {
-//   // $("this").toggleClass("unlocked");
-//   console.log("clicked");
-//   alert("clicked!");
-// });
 
 $(function(){
   $('.locked').on('click', function() {
      $(this).toggleClass("unlocked");
   });
+
+  $('#frontdoor_lock').on('click', function() {
+    if ($("#front_door_lock_button").hasClass("unlocked")){
+       $("#front_door_lock_button").removeClass("unlocked");
+       $("#front_door_lock_button").addClass("locked");
+     }
+     else if ($("#front_door_lock_button").hasClass("locked")){
+        $("#front_door_lock_button").addClass("unlocked");
+     }
+   });
+
+   $('#front_door_lock_button').on('click', function() {
+     if ($("#frontdoor_lock").hasClass("unlocked")){
+        $("#frontdoor_lock").removeClass("unlocked");
+        $("#frontdoor_lock").addClass("locked");
+      }
+      else if ($("#frontdoor_lock").hasClass("locked")){
+         $("#frontdoor_lock").addClass("unlocked");
+      }
+    });
 
 });
 
@@ -37,6 +52,20 @@ $(function(){
   $(".pickdate").datepicker('setDate', new Date());
 });
 
+$(function(){
+  $("#up_button").on('click', function() {
+    var div = $("#temperature_value");
+    var temp = div[0].textContent;
+    temp++ ;
+    div[0].textContent = temp;
+  });
+  $("#down_button").on('click', function() {
+    var div = $("#temperature_value");
+    var temp = div[0].textContent;
+    temp-- ;
+    div[0].textContent = temp;
+  });
+});
 
 </script>
 
@@ -75,20 +104,21 @@ $(function(){
               </ul>
             </li>
 
-            <li class="dropdown nav_item">
+            <!-- <li class="dropdown nav_item">
               <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Child
               <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown_item" role="menu">
                 <li><a class="dropdown_item" href="#" data-toggle="pill" >Add Child</a></li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- <li class="nav_item"><a data-toggle='pill' class="nav_item" href="#">Child</a></li> -->
 
             <li class="dropdown nav_item">
-              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Account
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Mrs Bell
               <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown_item" role="menu">
+                <!-- <li><a class="dropdown_item" href="#" data-toggle="pill" >Account Details</a></li> -->
                 <li><a class="dropdown_item" href="#" data-toggle="pill" >Account Details</a></li>
                 <li><a href="#" data-toggle="pill" >Logout</a></li>
                 <!-- <li><a href="#" data-toggle="pill" >Logout</a></li> -->
@@ -113,15 +143,40 @@ $(function(){
     <div id="home_page_div" class="page_content_div tab-pane fade in active">
       <div class="page_header">   </div>
 
+      <div id="locks_div_homepage" class="homepage-div">
+        <div class="home_page_div_heading"> Welcome Mrs Bell  </div>
+
+        <div id="front_door_lock" class="lock_homepage">
+          <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
+          <button  id="front_door_lock_button" class="padlock locked unlocked"></button>
+        </div>
+
+        <div id="all_door_lock" class="lock_homepage">
+          <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
+          <button  id="garage_lock_button" class="padlock locked"></button>
+        </div>
+
+        <div id="all_door_lock" class="lock_homepage">
+          <div id="energy_temp_label" class="label_lock_homepage temp"> Temperature </div>
+          <div id="temperature_value" class="temp"> 23 </div>
+          <div id="deg" class="temp"> &deg C </div>
+          <button id="down_button" class="temp_adjust btn btn-default temp"> - </button>
+          <button id="up_button" class="temp_adjust btn btn-default temp" > + </button>
+        </div>
+
+        <div id="current_usage" >  </div>
+        <div id="last_month_usage" >  </div>
+
+
+      </div>
+
       <div id="camera_carousel_container" class="homepage-div">
-        <div class="home_page_div_heading">  </div>
         <div id="camera_carousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#camera_carousel" data-slide-to="0" class="active"></li>
             <li data-target="#camera_carousel" data-slide-to="1"></li>
             <li data-target="#camera_carousel" data-slide-to="2"></li>
-            <li data-target="#camera_carousel" data-slide-to="3"></li>
           </ol>
 
           <div class="carousel-inner" role="listbox">
@@ -132,12 +187,6 @@ $(function(){
               </div>
             </div>
 
-            <div class="item">
-              <img src="diningroom.jpg" alt="Dining Room">
-              <div class="carousel-caption">
-                Dining Room
-              </div>
-            </div>
 
             <div class="item">
               <img src="kitchen.jpg" alt="Kitchen">
@@ -165,39 +214,12 @@ $(function(){
           </a>
         </div>
 
-      </div>
+        <div id="livefeed" class="home_page_div_heading"> Livefeed </div>
 
-      <div id="locks_div_homepage" class="homepage-div">
-        <div class="home_page_div_heading"> LOCKS </div>
-
-        <div id="front_door_lock" class="lock_homepage">
-          <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
-          <button  id="front_door_lock_button" class="padlock locked unlocked"></button>
-        </div>
-
-        <div id="all_door_lock" class="lock_homepage">
-          <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
-          <button  id="garage_lock_button" class="padlock locked"></button>
-        </div>
 
       </div>
 
-      <!-- <div id="energy_div_homepage" class="homepage-div">
-        <div class="home_page_div_heading"> ENERGY </div>
-        <div id="usage_graph"> </div>
-      </div> -->
 
-      <!-- <div id="lights_div_homepage" class="homepage-div">
-        <div class="home_page_div_heading"> LIGHTS AND HEATING </div>
-        <div id="front_door_lock" class="lock_homepage">
-          <input type="checkbox" name=front_door_checkbox checked data-toggle="toggle">
-        </div>
-        <div id="front_door_label" class="label_lock_homepage"> Heating </div>
-        <div id="all_door_lock" class="lock_homepage">
-          <input type="checkbox" name="all_door_checkbox" checked data-toggle="toggle">
-        </div>
-        <div id="all_door_label" class="label_lock_homepage"> All Lights </div>
-      </div> -->
 
     </div>
 
@@ -253,7 +275,7 @@ $(function(){
       <div id="motion_header"> Motion Detection Log  </div>
         <div id="filter_motion" >
           <button class="btn btn-primary" id="filter_collapse_button" data-toggle="collapse" data-target="#collapse_div">Filter Motion
-
+            <span class="caret"></span></a>
           </button>
         </div>
 
@@ -284,6 +306,26 @@ $(function(){
         </div>
 
       <div id="table_container" class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="video_footage_dialog_motion" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- close button at top -->
+                <button type="button" class="x close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Kitchen Video Footage </h4>
+              </div>
+              <div class="video_footage_modal_body">
+
+              </div>
+              <div id="progress_bar">
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- <div id="table_header"> Motion Detected </div>  -->
         <table class="table table-striped table-bordered table-hover">
           <thead>
@@ -291,113 +333,135 @@ $(function(){
               <th>Date</th>
               <th>Time</th>
               <th>Room</th>
+              <th> Video Footage </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>12 - 05 - 2016</td>
-              <td>12 : 00 : 52</td>
+              <td>14 : 20 : 52</td>
               <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
-              <td>12 : 23 : 47</td>
+              <td>13 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
-              <td>13 : 01 : 26</td>
-              <td>Dining Room</td>
-            </tr>
-            <tr>
-              <td>12 - 05 - 2016</td>
-              <td>12 : 00 : 52</td>
-              <td>Entrance</td>
-            </tr>
-            <tr>
-              <td>12 - 05 - 2016</td>
-              <td>12 : 23 : 47</td>
+              <td>12 : 01 : 26</td>
               <td>Kitchen</td>
-            </tr>
-            <tr>
-              <td>12 - 05 - 2016</td>
-              <td>13 : 01 : 26</td>
-              <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 00 : 52</td>
-              <td>Entrance</td>
-            </tr>
-            <tr>
-              <td>12 - 05 - 2016</td>
-              <td>12 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
-              <td>13 : 01 : 26</td>
-              <td>Dining Room</td>
+              <td>11 : 23 : 47</td>
+              <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>11 : 01 : 26</td>
+              <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 00 : 52</td>
               <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>13 : 01 : 26</td>
               <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 00 : 52</td>
               <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>13 : 01 : 26</td>
               <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 00 : 52</td>
               <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>13 : 01 : 26</td>
               <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 00 : 52</td>
               <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>12 : 23 : 47</td>
               <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
             <tr>
               <td>12 - 05 - 2016</td>
               <td>13 : 01 : 26</td>
               <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 00 : 52</td>
+              <td>Entrance</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>12 : 23 : 47</td>
+              <td>Kitchen</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
+            </tr>
+            <tr>
+              <td>12 - 05 - 2016</td>
+              <td>13 : 01 : 26</td>
+              <td>Dining Room</td>
+              <td> <a data-toggle="modal" data-target="#video_footage_dialog_motion"> View Footage </a></td>
             </tr>
           </tbody>
         </table>
@@ -412,10 +476,15 @@ $(function(){
         <div id="floorplan_container">
 
           <div id="lock_padding"> </div>
-          <div class="doorlock_div"> </div>
+
+          <div class="doorlock_div">
+            <!-- lock all
+            <button id="all_lock" class="padlock locked unlocked lockall">
+            </button> -->
+          </div>
 
           <div class="doorlock_div" id="sidedoor1_lock">
-            <button id="frontdoor_lock" class="locked">
+            <button id="frontdoor_lock" class="locked unlocked">
             </button>
           </div>
 
