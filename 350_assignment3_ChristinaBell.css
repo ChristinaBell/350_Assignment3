@@ -194,7 +194,7 @@ ul.dropdown-menu>li.active>a{
 }
 
  #current_usage{
-   margin-top: 50px;
+   margin-top: 20px;
    background: url("usage1.jpg") no-repeat;
    background-size: contain;
    /*margin: auto;*/
@@ -208,7 +208,7 @@ ul.dropdown-menu>li.active>a{
  }
 
  #last_month_usage{
-   margin-top: 50px;
+   margin-top: 20px;
    background: url("usage2.jpg") no-repeat;
    background-size: contain;
    margin: auto;
@@ -354,7 +354,7 @@ ul.dropdown-menu>li.active>a{
   height: 55px;
   margin: auto;
   background-color: black;
-  background: url("videoplayer.jpg") no-repeat center;
+  background: url("videoplayerbw.jpg") no-repeat center;
   background-size: cover;
 }
 
