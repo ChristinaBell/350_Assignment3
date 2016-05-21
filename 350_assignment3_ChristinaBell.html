@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <link rel="stylesheet" type = "text/css" href="350_assignment3_ChristinaBell.css">
-<script type="text/javascript" src="js/350_assignment3_ChristinaBell.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -17,57 +16,8 @@
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-<script>
-
-$(function(){
-  $('.locked').on('click', function() {
-     $(this).toggleClass("unlocked");
-  });
-
-  $('#frontdoor_lock').on('click', function() {
-    if ($("#front_door_lock_button").hasClass("unlocked")){
-       $("#front_door_lock_button").removeClass("unlocked");
-       $("#front_door_lock_button").addClass("locked");
-     }
-     else if ($("#front_door_lock_button").hasClass("locked")){
-        $("#front_door_lock_button").addClass("unlocked");
-     }
-   });
-
-   $('#front_door_lock_button').on('click', function() {
-     if ($("#frontdoor_lock").hasClass("unlocked")){
-        $("#frontdoor_lock").removeClass("unlocked");
-        $("#frontdoor_lock").addClass("locked");
-      }
-      else if ($("#frontdoor_lock").hasClass("locked")){
-         $("#frontdoor_lock").addClass("unlocked");
-      }
-    });
-
-});
-
-
-$(function(){
-  $(".pickdate").datepicker({ dateFormat:"dd-mm-yy", defaultDate: new Date() } );
-  $(".pickdate").datepicker('setDate', new Date());
-});
-
-$(function(){
-  $("#up_button").on('click', function() {
-    var div = $("#temperature_value");
-    var temp = div[0].textContent;
-    temp++ ;
-    div[0].textContent = temp;
-  });
-  $("#down_button").on('click', function() {
-    var div = $("#temperature_value");
-    var temp = div[0].textContent;
-    temp-- ;
-    div[0].textContent = temp;
-  });
-});
-
-</script>
+<!-- <script> </script> -->
+<script src="350_assignment3_ChristinaBell.js"></script>
 
 
 <body>
@@ -104,18 +54,8 @@ $(function(){
               </ul>
             </li>
 
-            <!-- <li class="dropdown nav_item">
-              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Child
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown_item" role="menu">
-                <li><a class="dropdown_item" href="#" data-toggle="pill" >Add Child</a></li>
-              </ul>
-            </li> -->
-
-            <!-- <li class="nav_item"><a data-toggle='pill' class="nav_item" href="#">Child</a></li> -->
-
             <li class="dropdown nav_item">
-              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Mrs Bell
+              <a class="dropdown-toggle nav_item" data-toggle="dropdown" href="#"> Miss Bell
               <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown_item" role="menu">
                 <!-- <li><a class="dropdown_item" href="#" data-toggle="pill" >Account Details</a></li> -->
@@ -144,7 +84,7 @@ $(function(){
       <div class="page_header">   </div>
 
       <div id="locks_div_homepage" class="homepage-div">
-        <div class="home_page_div_heading"> Welcome Mrs Bell  </div>
+        <div class="home_page_div_heading"> Welcome Miss Bell  </div>
 
         <div id="front_door_lock" class="lock_homepage">
           <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
@@ -153,15 +93,16 @@ $(function(){
 
         <div id="all_door_lock" class="lock_homepage">
           <div id="all_door_label" class="label_lock_homepage"> All Doors </div>
-          <button  id="garage_lock_button" class="padlock locked"></button>
+          <!-- <button  id="all_lock_button" class="padlock unlocked"></button> -->
+          <div id="all_lock_status" class="notsecure" > Not Secure </div>
         </div>
 
         <div id="all_door_lock" class="lock_homepage">
           <div id="energy_temp_label" class="label_lock_homepage temp"> Temperature </div>
-          <div id="temperature_value" class="temp"> 23 </div>
-          <div id="deg" class="temp"> &deg C </div>
-          <button id="down_button" class="temp_adjust btn btn-default temp"> - </button>
           <button id="up_button" class="temp_adjust btn btn-default temp" > + </button>
+          <button id="down_button" class="temp_adjust btn btn-default temp"> - </button>
+          <div id="deg" class="temp"> &deg C </div>
+          <div id="temperature_value" class="temp"> 23 </div>
         </div>
 
         <div id="current_usage" >  </div>
@@ -181,7 +122,7 @@ $(function(){
 
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="entrance2.jpg" alt="Entrance">
+              <img src="img/entrance2.jpg" alt="Entrance">
               <div class="carousel-caption">
                 Entrance
               </div>
@@ -189,14 +130,14 @@ $(function(){
 
 
             <div class="item">
-              <img src="kitchen.jpg" alt="Kitchen">
+              <img src="img/kitchen.jpg" alt="Kitchen">
               <div class="carousel-caption">
                 Kitchen
               </div>
             </div>
 
             <div class="item">
-              <img src="tvroom.jpg" alt="TV Room">
+              <img src="img/tvroom.jpg" alt="TV Room">
               <div class="carousel-caption">
                 TV Room
               </div>
