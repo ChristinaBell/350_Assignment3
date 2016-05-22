@@ -81,4 +81,11 @@ $( document ).ready(function() {
     });
   });
 
+  $(function(){
+    $(".close").on('click', function() {
+      $("#camera2").css("color", "white");
+      console.log("closed");
+    });
+  });
+
 });

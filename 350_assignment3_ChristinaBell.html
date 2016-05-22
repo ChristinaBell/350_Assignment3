@@ -81,10 +81,12 @@
     <!-- --------------------------- HOME page --------------------------------------- -->
 
     <div id="home_page_div" class="page_content_div tab-pane fade in active">
-      <div class="page_header">   </div>
+      <div class="page_header">
+        <!-- <div class="home_page_div_heading"> Welcome, Miss Bell  </div> -->
+      </div>
 
       <div id="locks_div_homepage" class="homepage-div">
-        <div class="home_page_div_heading"> Welcome Miss Bell  </div>
+        <div class="home_page_div_heading"> Welcome, Miss Bell  </div>
 
         <div id="front_door_lock" class="lock_homepage">
           <div id="front_door_label" class="label_lock_homepage"> Front Door </div>
@@ -113,35 +115,68 @@
 
       <div id="camera_carousel_container" class="homepage-div">
         <div id="camera_carousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
+
           <ol class="carousel-indicators">
             <li data-target="#camera_carousel" data-slide-to="0" class="active"></li>
             <li data-target="#camera_carousel" data-slide-to="1"></li>
             <li data-target="#camera_carousel" data-slide-to="2"></li>
+            <li data-target="#camera_carousel" data-slide-to="3"></li>
+            <li data-target="#camera_carousel" data-slide-to="4"></li>
+            <li data-target="#camera_carousel" data-slide-to="5"></li>
+            <li data-target="#camera_carousel" data-slide-to="6"></li>
           </ol>
 
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="img/entrance2.jpg" alt="Entrance">
+              <img src="images/deck.jpg" alt="Entrance">
               <div class="carousel-caption">
-                Entrance
+                Back Deck
               </div>
             </div>
 
 
             <div class="item">
-              <img src="img/kitchen.jpg" alt="Kitchen">
+              <img src="images/garage.jpg" alt="Kitchen">
+              <div class="carousel-caption">
+                Garage
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="images/side.jpg" alt="TV Room">
+              <div class="carousel-caption">
+                Side of House
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="images/kitchen.jpg" alt="TV Room">
               <div class="carousel-caption">
                 Kitchen
               </div>
             </div>
 
             <div class="item">
-              <img src="img/tvroom.jpg" alt="TV Room">
+              <img src="images/lounge.jpg" alt="TV Room">
               <div class="carousel-caption">
-                TV Room
+                Lounge
               </div>
             </div>
+
+            <div class="item">
+              <img src="images/bedroom1.jpg" alt="Kitchen">
+              <div class="carousel-caption">
+                Bedroom 1
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="images/bedroom2.jpg" alt="Kitchen">
+              <div class="carousel-caption">
+                Bedroom 2
+              </div>
+            </div>
+
           </div>
 
           <!-- Left and right controls -->
@@ -155,7 +190,8 @@
           </a>
         </div>
 
-        <div id="livefeed" class="home_page_div_heading"> Livefeed </div>
+
+        <div id="livefeed" class=""> Livefeed </div>
 
 
       </div>
@@ -171,24 +207,24 @@
 
       <div id="camera_container">
 
-        <button type="button" id="camera1" class="camera_footage"> Entrance </button>
+        <button type="button" id="camera1" class="btn camera_footage"> Outdoor Area </button>
 
-        <button type="button" id="camera2" class="btn btn-info btn-lg camera_footage" data-toggle="modal" data-target="#video_footage_dialog"> Kitchen </button>
+        <button type="button" id="camera2" class="btn camera_footage" data-toggle="modal" data-target="#video_footage_dialog"> Kitchen </button>
 
-        <button type="button" id="camera3" class="camera_footage"> Dining Room </button>
+        <button type="button" id="camera3" class="btn camera_footage"> Lounge </button>
 
-        <button type="button" id="camera4" class="camera_footage"> TV Room</button>
+        <button type="button" id="camera4" class="btn camera_footage"> Bedroom 1</button>
 
-        <button type="button" id="camera5" class="camera_footage"> Lounge </button>
+        <button type="button" id="camera5" class="btn camera_footage"> Garage </button>
 
-        <button type="button" id="camera6" class="camera_footage"> Bedroom 1 </button>
+        <button type="button" id="camera6" class="btn camera_footage"> Side of House </button>
 
-        <button type="button" id="camera7" class="camera_footage"> Bedroom 2 </button>
+        <button type="button" id="camera7" class="btn camera_footage"> Bedroom 2 </button>
 
-        <button type="button" id="camera8" class="camera_footage"> Bedroom 3 </button>
+        <button type="button" id="camera8" class="btn camera_footage"> Study </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="video_footage_dialog" role="dialog">
+        <div class="modal fade video_footage_dialog" id="video_footage_dialog" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -235,13 +271,13 @@
             Filter Rooms: &nbsp
             <select id="motion_select">
               <option value="all">All</option>
-              <option value="entrance">Entrance</option>
-              <option value="kitchen">Kitchen</option>
-              <option value="lounge">Lounge</option>
-              <option value="tvroom">TV Room</option>
-              <option value="bedroom1">Bedroom 1</option>
-              <option value="beroom2">Bedroom 2</option>
-              <option value="beroom3">Bedroom 3</option>
+              <option value="entrance">Deck</option>
+              <option value="kitchen">Garage</option>
+              <option value="lounge">Side</option>
+              <option value="tvroom">Lounge</option>
+              <option value="bedroom1">Kitchen</option>
+              <option value="beroom2">Bedroom 1</option>
+              <option value="beroom3">Bedroom 2</option>
             </select>
           </div>
         </div>
@@ -249,7 +285,7 @@
       <div id="table_container" class="container">
 
         <!-- Modal -->
-        <div class="modal fade" id="video_footage_dialog_motion" role="dialog">
+        <div class="modal fade video_footage_dialog" id="video_footage_dialog_motion" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
