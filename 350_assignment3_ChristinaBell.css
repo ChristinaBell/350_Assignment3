@@ -298,6 +298,45 @@ ul.dropdown-menu>li.active>a{
   border-radius: 10px;
 }
 
+#item1{
+  background: url("images/deck.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#item2{
+  background: url("images/garage.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+#item3{
+  background: url("images/side.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+#item4{
+  background: url("images/kitchen.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#item5{
+  background: url("images/lounge.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+#item6{
+  background: url("images/bedroom1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#item7{
+  background: url("images/bedroom2.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
 #camera_container {
   margin: auto;
   height: 87%;
@@ -374,6 +413,7 @@ ul.dropdown-menu>li.active>a{
 .modal-dialog {
     width: 1100px;
     margin: auto;
+    overflow: hidden;
 }
 
 .modal-header {
@@ -381,6 +421,14 @@ ul.dropdown-menu>li.active>a{
     padding-top: 10px;
     font-family: nexabold;
     font-size: 18px;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-content{
+  overflow: hidden;
 }
 
 .video_footage_modal_body {
